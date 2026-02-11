@@ -1,5 +1,7 @@
 package com.example.vitapulse.controller;
 
+import com.example.vitapulse.dto.auth.LoginRequest;
+import com.example.vitapulse.dto.auth.LoginResponse;
 import com.example.vitapulse.dto.auth.RegisterRequest;
 import com.example.vitapulse.dto.auth.RegisterResponse;
 import com.example.vitapulse.service.AuthService;
@@ -22,4 +24,10 @@ public class AuthController {
     public RegisterResponse register(@Valid @RequestBody RegisterRequest request) {
         return authService.register(request);
     }
+
+    @PostMapping("/login")
+    public LoginResponse login(@Valid @RequestBody LoginRequest request) {
+        return authService.login(request);
+    }
+
 }
